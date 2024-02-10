@@ -66,7 +66,7 @@ const AfterLogin = () => {
         return;
       }
 
-      await fetch("http://localhost:8082/insertFavoris", {
+      await fetch("https://springboot-production-1101.up.railway.app/insertFavoris", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -99,7 +99,7 @@ const AfterLogin = () => {
         return;
       }
 
-      await fetch("http://localhost:8082/deleteFavoris", {
+      await fetch("https://springboot-production-1101.up.railway.app/deleteFavoris", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
