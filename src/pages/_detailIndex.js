@@ -33,7 +33,7 @@ const DetailIndex = () => {
         return;
       }
 
-      const url = `https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce2}`;
+      const url = `http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce2}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -60,7 +60,7 @@ const DetailIndex = () => {
         return;
       }
 
-      const url = `https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce}`;
+      const url = `http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -90,7 +90,7 @@ const DetailIndex = () => {
       console.log("trueid=" + trueId);
 
       await fetch(
-        `https://springboot-production-1101.up.railway.app/message/contacter/${idUser}/${trueId}`,
+        `http://localhost:8082/message/contacter/${idUser}/${trueId}`,
         {
           method: "POST",
           headers: {
@@ -163,6 +163,7 @@ const DetailIndex = () => {
             </div>
             <div className="col-lg-6 mb-4">
               <h4 className="mb-2">{data.prix} MGA</h4>
+              <h5 className="mb-2"> Mark : {data.model.marque.nomMarque}</h5>
               {/* <div className="d-flex mb-3">
                 <h6 className="mr-2">
                   <i className="fa fa-2x fa-user-circle  text-secondary"></i>
