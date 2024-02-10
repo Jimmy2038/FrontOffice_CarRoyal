@@ -125,6 +125,7 @@ const Friends = () => {
     const message = document.createElement("p");
     message.textContent = content;
     messageContainer.appendChild(message);
+    chatArea = document.querySelector("#chat-messages");
     chatArea.appendChild(messageContainer);
   }
 
@@ -143,6 +144,7 @@ const Friends = () => {
       });
 
       const userChat = response.data;
+      chatArea = document.querySelector("#chat-messages");
       chatArea.innerHTML = "";
       userChat.forEach((chat) => {
         displayMessage(chat.userTo.idUser, chat.content);
@@ -205,6 +207,7 @@ const Friends = () => {
       messageInput.value = "";
     }
     messageInput.value = "";
+    chatArea = document.querySelector("#chat-messages");
     chatArea.scrollTop = chatArea.scrollHeight;
   }
 
