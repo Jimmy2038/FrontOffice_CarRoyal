@@ -23,31 +23,18 @@ const Friends = () => {
   const [error, setError] = useState(null);
   const { idUser } = useParams();
   var stompClient = null;
-      var usernamePage = null;
-  var chatPage = null;
-  var usernameForm = null;
-  var messageForm = null;
-  var messageInput =null;
-  var connectedUsers = null;
-  var connectingElement = null;
-  var chatArea = null;
-  var logout = null;
-  var login = null;
+  const usernamePage = document.querySelector("#username-page");
+  const chatPage = document.querySelector("#chat-page");
+  const usernameForm = document.querySelector("#usernameForm");
+  const messageForm = document.querySelector("#messageForm");
+  const messageInput = document.querySelector("#messageAlefa");
+  const connectedUsers = document.querySelector("#connectedUsers");
+  const connectingElement = document.querySelector(".connecting");
+  const chatArea = document.querySelector("#chat-messages");
+  const logout = document.querySelector("#logout");
+  const login = document.querySelector(".login");
   let selectedUserId = null;
 
-  useEffect(() => {
-     usernamePage = document.querySelector("#username-page");
-   chatPage = document.querySelector("#chat-page");
-   usernameForm = document.querySelector("#usernameForm");
-   messageForm = document.querySelector("#messageForm");
-   messageInput = document.querySelector("#messageAlefa");
-   connectedUsers = document.querySelector("#connectedUsers");
-   connectingElement = document.querySelector(".connecting");
-   chatArea = document.querySelector("#chat-messages");
-   logout = document.querySelector("#logout");
-   login = document.querySelector("#login");
-  }, []);
-  
   const getMessage = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -57,7 +44,7 @@ const Friends = () => {
         return;
       }
 
-      const url = `https://springboot-production-1101.up.railway.app/message/listUser/${idUser}`;
+      const url = `http://localhost:8082/message/listUser/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -90,17 +77,13 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
-    if(login){
-      login.classList.add("hidden");
-    }
-    // connectedUsers.classList.remove("hidden");
+    login.classList.add("hidden");
+    connectedUsers.classList.remove("hidden");
     console.log("mety");
   };
 
   const connect = () => {
-    let socket = new SockJS(
-      "https://springboot-production-1101.up.railway.app/ws"
-    );
+    let socket = new SockJS("http://localhost:8082/ws");
     if (stompClient == null) {
       stompClient = Stomp.over(socket);
       stompClient.connect({}, onConnected, onError);
@@ -146,7 +129,7 @@ const Friends = () => {
         setError("Token d'autorisation manquant. Veuillez vous connecter.");
         return;
       }
-      const url = `https://springboot-production-1101.up.railway.app/message/discu/${idUser}/${selectedUserId}`;
+      const url = `http://localhost:8082/message/discu/${idUser}/${selectedUserId}`;
       const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -224,7 +207,7 @@ const Friends = () => {
         <div className="users-list">
           <div className="users-list-container">
             <h2>Friends List</h2>
-            <button onClick={connect} id="login">
+            <button onClick={connect} className="login">
               Show List
             </button>
             <ul id="connectedUsers" className="hidden">
