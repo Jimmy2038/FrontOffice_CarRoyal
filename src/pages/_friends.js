@@ -77,7 +77,7 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
-    login.classList.add("hidden");
+    
     connectedUsers.classList.remove("hidden");
     console.log("mety");
   };
