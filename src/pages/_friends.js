@@ -32,7 +32,7 @@ const Friends = () => {
   const connectingElement = document.querySelector(".connecting");
   const chatArea = document.querySelector("#chat-messages");
   const logout = document.querySelector("#logout");
-  const login = document.querySelector(".login");
+  const login = document.querySelector("#login");
   let selectedUserId = null;
 
   const getMessage = async () => {
@@ -209,7 +209,7 @@ const Friends = () => {
         <div className="users-list">
           <div className="users-list-container">
             <h2>Friends List</h2>
-            <button onClick={connect} className="login">
+            <button onClick={connect} id="login">
               Show List
             </button>
             <ul id="connectedUsers" className="hidden">
