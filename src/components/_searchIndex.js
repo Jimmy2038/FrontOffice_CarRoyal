@@ -241,7 +241,7 @@ const SearchIndex = () => {
                 type="number"
                 id="mileage"
                 name="mileageMax"
-                defaultValue="500000"
+                defaultValue=""
                 placeholder="Mileage max"
                 required
                 style={input}
@@ -255,7 +255,7 @@ const SearchIndex = () => {
                 id="year"
                 name="yearmin"
                 placeholder="Year min"
-                defaultValue="2000"
+                defaultValue=""
                 required
                 style={input}
               />
@@ -294,7 +294,7 @@ const SearchIndex = () => {
                 id="prix"
                 name="prixmax"
                 placeholder="Price max"
-                defaultValue="99000000000000"
+                defaultValue=""
                 required
                 style={input}
               />
