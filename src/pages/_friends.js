@@ -27,16 +27,16 @@ const Friends = () => {
   let selectedUserId = null;
 
   useEffect(() => {
-    const usernamePage = document.querySelector("#username-page");
-  const chatPage = document.querySelector("#chat-page");
-  const usernameForm = document.querySelector("#usernameForm");
-  const messageForm = document.querySelector("#messageForm");
-  const messageInput = document.querySelector("#messageAlefa");
-  const connectedUsers = document.querySelector("#connectedUsers");
-  const connectingElement = document.querySelector(".connecting");
-  const chatArea = document.querySelector("#chat-messages");
-  const logout = document.querySelector("#logout");
-  const login = document.querySelector("#login");
+    var usernamePage = document.querySelector("#username-page");
+  var chatPage = document.querySelector("#chat-page");
+  var usernameForm = document.querySelector("#usernameForm");
+  var messageForm = document.querySelector("#messageForm");
+  var messageInput = document.querySelector("#messageAlefa");
+  var connectedUsers = document.querySelector("#connectedUsers");
+  var connectingElement = document.querySelector(".connecting");
+  var chatArea = document.querySelector("#chat-messages");
+  var logout = document.querySelector("#logout");
+  var login = document.querySelector("#login");
   }, []);
   
   const getMessage = async () => {
@@ -81,9 +81,9 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
-    if (login) {
+    
       login.classList.add("hidden");
-    }
+   
     // connectedUsers.classList.remove("hidden");
     console.log("mety");
   };
