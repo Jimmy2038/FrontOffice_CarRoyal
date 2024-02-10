@@ -23,16 +23,16 @@ const Friends = () => {
   const [error, setError] = useState(null);
   const { idUser } = useParams();
   var stompClient = null;
-  const usernamePage = document.querySelector("#username-page");
+//   const usernamePage = document.querySelector("#username-page");
 //   const chatPage = document.querySelector("#chat-page");
   const usernameForm = document.querySelector("#usernameForm");
   const messageForm = document.querySelector("#messageForm");
   const messageInput = document.querySelector("#messageAlefa");
-  const connectedUsers = document.querySelector("#connectedUsers");
+  var connectedUsers = document.querySelector("#connectedUsers");
 //   const connectingElement = document.querySelector(".connecting");
   const chatArea = document.querySelector("#chat-messages");
 //   const logout = document.querySelector("#logout");
-  const login = document.querySelector(".login");
+  var login = document.querySelector(".login");
   let selectedUserId = null;
 
   const getMessage = async () => {
@@ -77,6 +77,8 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
+    login = document.querySelector(".login");
+    connectedUsers = document.querySelector("#connectedUsers");
     if (login) {
       login.classList.add("hidden");
        connectedUsers.classList.remove("hidden");
