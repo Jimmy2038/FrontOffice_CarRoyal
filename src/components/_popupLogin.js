@@ -3,8 +3,8 @@ import "../style/components/popup.css";
 import { useNavigate } from "react-router-dom";
 
 const PopupLogin = ({ isOpen, onClose }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("fehizoro@gmail.com");
+  const [password, setPassword] = useState("fehizoro");
   const [error, setError] = useState(null);
 
   // const [redirectToHome, setRedirectToHome] = useState(false);
