@@ -70,7 +70,7 @@ const NavbarIndex = () => {
               id="navbarCollapse"
             >
               <div className="navbar-nav ml-auto py-0">
-                <a href="/index" className="nav-item nav-link active">
+                <a href="/afterlogin" className="nav-item nav-link active">
                   Home
                 </a>
                 <a
