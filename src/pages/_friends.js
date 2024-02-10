@@ -23,7 +23,11 @@ const Friends = () => {
   const [error, setError] = useState(null);
   const { idUser } = useParams();
   var stompClient = null;
-  const usernamePage = document.querySelector("#username-page");
+  
+  let selectedUserId = null;
+
+  useEffect(() => {
+    const usernamePage = document.querySelector("#username-page");
   const chatPage = document.querySelector("#chat-page");
   const usernameForm = document.querySelector("#usernameForm");
   const messageForm = document.querySelector("#messageForm");
@@ -33,8 +37,8 @@ const Friends = () => {
   const chatArea = document.querySelector("#chat-messages");
   const logout = document.querySelector("#logout");
   const login = document.querySelector("#login");
-  let selectedUserId = null;
-
+  }, []);
+  
   const getMessage = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -77,8 +81,10 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
-    
-    connectedUsers.classList.remove("hidden");
+    if (login) {
+      login.classList.add("hidden");
+    }
+    // connectedUsers.classList.remove("hidden");
     console.log("mety");
   };
 
