@@ -44,7 +44,7 @@ const Friends = () => {
         return;
       }
 
-      const url = `http://localhost:8082/message/listUser/${idUser}`;
+      const url = `https://springboot-production-1101.up.railway.app/message/listUser/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -83,7 +83,7 @@ const Friends = () => {
   };
 
   const connect = () => {
-    let socket = new SockJS("http://localhost:8082/ws");
+    let socket = new SockJS("https://springboot-production-1101.up.railway.app/ws");
     if (stompClient == null) {
       stompClient = Stomp.over(socket);
       stompClient.connect({}, onConnected, onError);
@@ -129,7 +129,7 @@ const Friends = () => {
         setError("Token d'autorisation manquant. Veuillez vous connecter.");
         return;
       }
-      const url = `http://localhost:8082/message/discu/${idUser}/${selectedUserId}`;
+      const url = `https://springboot-production-1101.up.railway.app/message/discu/${idUser}/${selectedUserId}`;
       const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
