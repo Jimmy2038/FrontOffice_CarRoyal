@@ -6,7 +6,7 @@ const LogoutButton = () => {
       const token = localStorage.getItem("token");
       const idUser = localStorage.getItem("idUser");
 
-      const response = await fetch("http://localhost:8081/deconnexion", {
+      const response = await fetch("https://springboot-production-1101.up.railway.app/deconnexion", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
