@@ -38,7 +38,7 @@ const AfterLogin = () => {
         return;
       }
 
-      const url = ` http://localhost:8082/annonce/valideNotUser/${idUser}`;
+      const url = ` https://springboot-production-1101.up.railway.app/annonce/valideNotUser/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
