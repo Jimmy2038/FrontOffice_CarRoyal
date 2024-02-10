@@ -28,7 +28,7 @@ const DetailAnnouncement = () => {
         return;
       }
 
-      const url = `https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce}`;
+      const url = `http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -78,6 +78,7 @@ const DetailAnnouncement = () => {
           <h1 className="display-4 text-uppercase mb-5">
             {data.model.nomModel}
           </h1>
+
           <div className="row align-items-center pb-2">
             <div className="col-lg-6 mb-4">
               {data.photos.length > 0 ? (
@@ -92,6 +93,7 @@ const DetailAnnouncement = () => {
             </div>
             <div className="col-lg-6 mb-4">
               <h4 className="mb-2">{data.prix} MGA</h4>
+              <h5 className="mb-2"> Mark : {data.model.marque.nomMarque}</h5>
               <p>{data.descri}</p>
             </div>
           </div>
