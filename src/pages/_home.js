@@ -39,7 +39,7 @@ const Home = () => {
 
   const handleLoadMark = async () => {
     try {
-      const url = `http://localhost:8082/marque/get`;
+      const url = `https://springboot-production-1101.up.railway.app/marque/get`;
 
       const response = await axios.get(url);
 
@@ -55,7 +55,7 @@ const Home = () => {
 
   const getModels = async (selectedMark) => {
     try {
-      const url = `http://localhost:8082/model/getByMarque/${selectedMark}`;
+      const url = `https://springboot-production-1101.up.railway.app/model/getByMarque/${selectedMark}`;
 
       const response = await axios.get(url);
 
@@ -71,7 +71,7 @@ const Home = () => {
 
   const handleLoadEnergy = async () => {
     try {
-      const url = `http://localhost:8082/energie/getAll`;
+      const url = `https://springboot-production-1101.up.railway.app/energie/getAll`;
 
       const response = await axios.get(url);
 
@@ -87,7 +87,7 @@ const Home = () => {
 
   const handleLoadTransmission = async () => {
     try {
-      const url = `http://localhost:8082/transmission/getAll`;
+      const url = `https://springboot-production-1101.up.railway.app/transmission/getAll`;
 
       const response = await axios.get(url);
 
@@ -104,7 +104,7 @@ const Home = () => {
   const search = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8082/annonce/recherche/${idMark}/${idModel}/${idTransmission}/${idEnergy}/${priceMin}/${priceMax}/${mileageMin}/${mileageMax}/${yearMin}/${yearMax}`,
+        `https://springboot-production-1101.up.railway.app/annonce/recherche/${idMark}/${idModel}/${idTransmission}/${idEnergy}/${priceMin}/${priceMax}/${mileageMin}/${mileageMax}/${yearMin}/${yearMax}`,
         {
           method: "GET",
           headers: {
