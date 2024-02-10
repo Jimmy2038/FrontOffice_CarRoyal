@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 import Footer from "../components/_footer";
 import HeaderInfoIndex from "../components/_headerInfoIndex";
@@ -11,7 +11,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
-import WebSocketClient from "websocket";
+// import WebSocketClient from "websocket";
 
 const Friends = () => {
   const container = {
@@ -24,14 +24,14 @@ const Friends = () => {
   const { idUser } = useParams();
   var stompClient = null;
   const usernamePage = document.querySelector("#username-page");
-  const chatPage = document.querySelector("#chat-page");
+//   const chatPage = document.querySelector("#chat-page");
   const usernameForm = document.querySelector("#usernameForm");
   const messageForm = document.querySelector("#messageForm");
   const messageInput = document.querySelector("#messageAlefa");
   const connectedUsers = document.querySelector("#connectedUsers");
-  const connectingElement = document.querySelector(".connecting");
+//   const connectingElement = document.querySelector(".connecting");
   const chatArea = document.querySelector("#chat-messages");
-  const logout = document.querySelector("#logout");
+//   const logout = document.querySelector("#logout");
   const login = document.querySelector(".login");
   let selectedUserId = null;
 
@@ -100,11 +100,11 @@ const Friends = () => {
     }
   };
 
-  useEffect(() => {
-    // marquerId est récupéré à partir des paramètres d'URL
-    getMessage();
-    // connect();
-  }, []);
+//   useEffect(() => {
+//     // marquerId est récupéré à partir des paramètres d'URL
+//     getMessage();
+//     // connect();
+//   }, []);
 
   if (data == null) {
     console.log("Loading");
