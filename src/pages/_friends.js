@@ -79,9 +79,10 @@ const Friends = () => {
     stompClient.subscribe(`/user/public`, onMessageReceived);
     if (login) {
       login.classList.add("hidden");
-    }
-    connectedUsers.classList.remove("hidden");
+       connectedUsers.classList.remove("hidden");
     console.log("mety");
+    }
+   
   };
 
   const connect = () => {
