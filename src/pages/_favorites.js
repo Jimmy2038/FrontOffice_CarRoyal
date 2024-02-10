@@ -32,7 +32,7 @@ const Favorites = () => {
         return;
       }
 
-      const url = ` https://springboot-production-1101.up.railway.app/favoris/${idUser}`;
+      const url = ` http://localhost:8082/favoris/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -100,6 +100,9 @@ const Favorites = () => {
                   <h4 className="text-uppercase mb-4">
                     {favoris.annonce.model.nomModel}
                   </h4>
+                  <h5 className=" mb-4">
+                    Mark : {favoris.annonce.model.marque.nomMarque}
+                  </h5>
                   <h5 className="text-uppercase mb-4">
                     {favoris.annonce.prix} MGA
                   </h5>
