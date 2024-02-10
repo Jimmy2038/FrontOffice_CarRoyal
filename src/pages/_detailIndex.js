@@ -60,7 +60,7 @@ const DetailIndex = () => {
         return;
       }
 
-      const url = `http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce}`;
+      const url = `https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -90,7 +90,7 @@ const DetailIndex = () => {
       console.log("trueid=" + trueId);
 
       await fetch(
-        `http://localhost:8082/message/contacter/${idUser}/${trueId}`,
+        `https://springboot-production-1101.up.railway.app/message/contacter/${idUser}/${trueId}`,
         {
           method: "POST",
           headers: {
