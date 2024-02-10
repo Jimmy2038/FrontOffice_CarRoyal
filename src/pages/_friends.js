@@ -154,7 +154,7 @@ const Friends = () => {
       });
 
       const userChat = response.data;
-      chatArea.innerHTML = "";
+      // chatArea.innerHTML = "";
       userChat.forEach((chat) => {
         displayMessage(chat.userTo.idUser, chat.content);
       });
