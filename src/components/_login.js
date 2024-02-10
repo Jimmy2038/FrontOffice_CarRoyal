@@ -16,7 +16,7 @@ const LoginButton = () => {
     <>
       <button
         type="button"
-        className="btn m-2 btn-outline-danger"
+        className="btn m-2 btn-outline-success"
         onClick={openPopup}
       >
         <span className="fas fa-sign-in-alt fe-16 mr-2"></span>
