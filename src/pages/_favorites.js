@@ -32,7 +32,7 @@ const Favorites = () => {
         return;
       }
 
-      const url = ` http://localhost:8082/favoris/${idUser}`;
+      const url = ` https://springboot-production-1101.up.railway.app/favoris/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
