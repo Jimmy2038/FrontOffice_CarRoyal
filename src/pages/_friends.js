@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 
 import Footer from "../components/_footer";
 import HeaderInfoIndex from "../components/_headerInfoIndex";
@@ -100,11 +100,11 @@ const Friends = () => {
     }
   };
 
-//   useEffect(() => {
-//     // marquerId est récupéré à partir des paramètres d'URL
-//     getMessage();
-//     // connect();
-//   }, []);
+  useEffect(() => {
+    // marquerId est récupéré à partir des paramètres d'URL
+    getMessage();
+    // connect();
+  }, []);
 
   if (data == null) {
     console.log("Loading");
