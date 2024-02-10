@@ -33,7 +33,7 @@ const DetailIndex = () => {
         return;
       }
 
-      const url = `http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce2}`;
+      const url = `https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce2}`;
 
       const response = await axios.get(url, {
         headers: {
