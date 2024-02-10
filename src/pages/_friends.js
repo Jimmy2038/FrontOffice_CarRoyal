@@ -25,12 +25,12 @@ const Friends = () => {
   var stompClient = null;
 //   const usernamePage = document.querySelector("#username-page");
 //   const chatPage = document.querySelector("#chat-page");
-  const usernameForm = document.querySelector("#usernameForm");
-  const messageForm = document.querySelector("#messageForm");
-  const messageInput = document.querySelector("#messageAlefa");
+  var usernameForm = document.querySelector("#usernameForm");
+  var messageForm = document.querySelector("#messageForm");
+  var messageInput = document.querySelector("#messageAlefa");
   var connectedUsers = document.querySelector("#connectedUsers");
 //   const connectingElement = document.querySelector(".connecting");
-  const chatArea = document.querySelector("#chat-messages");
+  var chatArea = document.querySelector("#chat-messages");
 //   const logout = document.querySelector("#logout");
   var login = document.querySelector(".login");
   let selectedUserId = null;
@@ -70,6 +70,7 @@ const Friends = () => {
     const message = JSON.parse(payload.body);
     if (selectedUserId && selectedUserId === message.userTo.idUser) {
       displayMessage(message.userTo.idUser, message.content);
+      chatArea = document.querySelector("#chat-messages");
       chatArea.scrollTop = chatArea.scrollHeight;
     }
   };
@@ -159,6 +160,7 @@ const Friends = () => {
     document.querySelectorAll(".user-item").forEach((item) => {
       item.classList.remove("active");
     });
+    messageForm = document.querySelector("#messageForm");
     messageForm.classList.remove("hidden");
 
     const clickedUser = event.currentTarget;
@@ -176,6 +178,7 @@ const Friends = () => {
 
   function sendMessage(e) {
     e.preventDefault();
+     messageInput = document.querySelector("#messageAlefa");
     const messageContent = messageInput.value.trim();
     if (messageContent && stompClient) {
       const chatMessage = {
