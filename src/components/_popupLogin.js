@@ -39,7 +39,7 @@ const PopupLogin = ({ isOpen, onClose }) => {
           localStorage.setItem("token", token);
           localStorage.setItem("idUser", idUser);
           // setRedirectToHome(true);
-          navigate("/index");
+          navigate("/afterlogin");
         }
       } else {
         console.log("huhuhuhhu");
