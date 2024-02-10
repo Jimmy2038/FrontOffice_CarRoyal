@@ -39,7 +39,7 @@ const Home = () => {
 
   const handleLoadMark = async () => {
     try {
-      const url = `https://springboot-production-1101.up.railway.app/marque/get`;
+      const url = `http://localhost:8082/marque/get`;
 
       const response = await axios.get(url);
 
@@ -55,7 +55,7 @@ const Home = () => {
 
   const getModels = async (selectedMark) => {
     try {
-      const url = `https://springboot-production-1101.up.railway.app/model/getByMarque/${selectedMark}`;
+      const url = `http://localhost:8082/model/getByMarque/${selectedMark}`;
 
       const response = await axios.get(url);
 
@@ -71,7 +71,7 @@ const Home = () => {
 
   const handleLoadEnergy = async () => {
     try {
-      const url = `https://springboot-production-1101.up.railway.app/energie/getAll`;
+      const url = `http://localhost:8082/energie/getAll`;
 
       const response = await axios.get(url);
 
@@ -87,7 +87,7 @@ const Home = () => {
 
   const handleLoadTransmission = async () => {
     try {
-      const url = `https://springboot-production-1101.up.railway.app/transmission/getAll`;
+      const url = `http://localhost:8082/transmission/getAll`;
 
       const response = await axios.get(url);
 
@@ -104,7 +104,7 @@ const Home = () => {
   const search = async () => {
     try {
       const response = await fetch(
-        `https://springboot-production-1101.up.railway.app/annonce/recherche/${idMark}/${idModel}/${idTransmission}/${idEnergy}/${priceMin}/${priceMax}/${mileageMin}/${mileageMax}/${yearMin}/${yearMax}`,
+        `http://localhost:8082/annonce/recherche/${idMark}/${idModel}/${idTransmission}/${idEnergy}/${priceMin}/${priceMax}/${mileageMin}/${mileageMax}/${yearMin}/${yearMax}`,
         {
           method: "GET",
           headers: {
@@ -151,7 +151,7 @@ const Home = () => {
 
   const handleLoadAnnonce = async () => {
     try {
-      const url = `https://springboot-production-1101.up.railway.app/annonce/valide`;
+      const url = `http://localhost:8082/annonce/valide`;
 
       const response = await axios.get(url);
 
@@ -384,6 +384,9 @@ const Home = () => {
                   <h4 className="text-uppercase mb-4">
                     {annonce.model.nomModel}
                   </h4>
+                  <h5 className=" mb-4">
+                    Mark : {annonce.model.marque.nomMarque}
+                  </h5>
                   <h5 className="text-uppercase mb-4">{annonce.prix} MGA</h5>
                   <div className="d-flex justify-content-center mb-4">
                     <div className="px-2">
