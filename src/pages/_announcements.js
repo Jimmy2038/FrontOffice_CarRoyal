@@ -27,7 +27,7 @@ const Announcements = () => {
         return;
       }
 
-      const url = `https://springboot-production-1101.up.railway.app/annonce/valide/${idUser}`;
+      const url = `http://localhost:8082/annonce/valide/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -105,6 +105,9 @@ const Announcements = () => {
                   <h4 className="text-uppercase mb-4">
                     {annonce.model.nomModel}
                   </h4>
+                  <h5 className=" mb-4">
+                    Mark : {annonce.model.marque.nomMarque}
+                  </h5>
                   <h6 className="mb-4">
                     Creation Date: {formatDate(annonce.daty)}
                   </h6>
