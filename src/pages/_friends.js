@@ -90,9 +90,9 @@ const Friends = () => {
   const onConnected = () => {
     stompClient.subscribe(`/user/${idUser}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/user/public`, onMessageReceived);
-    if(login){
-      login.classList.add("hidden");
-    }
+    // if(login){
+    //   login.classList.add("hidden");
+    // }
     // connectedUsers.classList.remove("hidden");
     console.log("mety");
   };
@@ -168,17 +168,17 @@ const Friends = () => {
   }
 
   function userItemClick(event) {
-    document.querySelectorAll(".user-item").forEach((item) => {
-      item.classList.remove("active");
-    });
-    messageForm.classList.remove("hidden");
+    // document.querySelectorAll(".user-item").forEach((item) => {
+    //   item.classList.remove("active");
+    // });
+    // messageForm.classList.remove("hidden");
 
     const clickedUser = event.currentTarget;
-    clickedUser.classList.add("active");
+    // clickedUser.classList.add("active");
 
     selectedUserId = clickedUser.getAttribute("id");
     console.log(selectedUserId);
-    messageForm.classList.remove("hidden");
+    // messageForm.classList.remove("hidden");
     fetchAndDisplayUserChat().then();
 
     // const nbrMsg = clickedUser.querySelector(".nbr-msg");
