@@ -227,7 +227,7 @@ const Friends = () => {
             <button onClick={connect} id="login">
               Show List
             </button>
-            <ul id="connectedUsers" className="hidden">
+            <ul id="connectedUsers" >
               {data.listUser.map((friend, index) => (
                 <li
                   className="user-item "
@@ -251,7 +251,7 @@ const Friends = () => {
         <div className="chat-area">
           <div className="chat-area" id="chat-messages"></div>
 
-          <form id="messageForm" name="messageForm" className="hidden">
+          <form id="messageForm" name="messageForm" >
             <div className="message-input">
               <input
                 autoComplete="off"
