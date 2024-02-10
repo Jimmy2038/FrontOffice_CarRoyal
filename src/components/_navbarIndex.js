@@ -3,7 +3,14 @@
 import React from "react";
 import LogoutButton from "./_logout";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+const handleLinkClick = (event) => {
+  // Annule le comportement par défaut du lien si l'attribut href est absent
+  if (!event.currentTarget.getAttribute("href")) {
+    event.preventDefault();
+  }
+};
 const NavbarIndex = () => {
   const navigate = useNavigate();
 
@@ -70,13 +77,18 @@ const NavbarIndex = () => {
               id="navbarCollapse"
             >
               <div className="navbar-nav ml-auto py-0">
-                <a href="/afterlogin" className="nav-item nav-link active">
-                  Home
-                </a>
+                 <Link
+                  className="nav-item nav-link active"
+                  to="/afterlogin"
+                  onClick={handleLinkClick}
+                >
+                     <span className="ml-1">Home</span>
+                </Link>
                 <a
                   onClick={handleMyFavoriteClick}
                   className="nav-item nav-link"
                 >
+               
                   Favorites
                 </a>
                 <a onClick={handleMyAnnonceClick} className="nav-item nav-link">
