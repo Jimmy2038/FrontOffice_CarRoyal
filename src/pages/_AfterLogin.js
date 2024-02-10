@@ -38,7 +38,7 @@ const AfterLogin = () => {
         return;
       }
 
-      const url = ` https://springboot-production-1101.up.railway.app/annonce/valideNotUser/${idUser}`;
+      const url = ` http://localhost:8082/annonce/valideNotUser/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
@@ -66,22 +66,19 @@ const AfterLogin = () => {
         return;
       }
 
-      await fetch(
-        "https://springboot-production-1101.up.railway.app/insertFavoris",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
+      await fetch("http://localhost:8082/insertFavoris", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idUtilisateur: idUser,
+          annonce: {
+            idAnnonce: idAnnonce,
           },
-          body: JSON.stringify({
-            idUtilisateur: idUser,
-            annonce: {
-              idAnnonce: idAnnonce,
-            },
-          }),
-        }
-      );
+        }),
+      });
       handleLoadAnnonce();
       console.log(data);
     } catch (error) {
@@ -102,22 +99,19 @@ const AfterLogin = () => {
         return;
       }
 
-      await fetch(
-        "https://springboot-production-1101.up.railway.app/deleteFavoris",
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
+      await fetch("http://localhost:8082/deleteFavoris", {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idUtilisateur: idUser,
+          annonce: {
+            idAnnonce: idAnnonce,
           },
-          body: JSON.stringify({
-            idUtilisateur: idUser,
-            annonce: {
-              idAnnonce: idAnnonce,
-            },
-          }),
-        }
-      );
+        }),
+      });
       handleLoadAnnonce();
       console.log(data);
     } catch (error) {
@@ -187,6 +181,9 @@ const AfterLogin = () => {
                   <h4 className="text-uppercase mb-4">
                     {annonce.model.nomModel}
                   </h4>
+                  <h5 className=" mb-4">
+                    Mark : {annonce.model.marque.nomMarque}
+                  </h5>
                   <h5 className="text-uppercase mb-4">{annonce.prix} MGA</h5>
                   <div className="d-flex justify-content-center mb-4">
                     <div className="px-2">
