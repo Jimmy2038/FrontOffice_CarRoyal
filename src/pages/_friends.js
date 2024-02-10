@@ -23,20 +23,29 @@ const Friends = () => {
   const [error, setError] = useState(null);
   const { idUser } = useParams();
   var stompClient = null;
-  
+      var usernamePage = null;
+  var chatPage = null;
+  var usernameForm = null;
+  var messageForm = null;
+  var messageInput =null;
+  var connectedUsers = null;
+  var connectingElement = null;
+  var chatArea = null;
+  var logout = null;
+  var login = null;
   let selectedUserId = null;
 
   useEffect(() => {
-    let usernamePage = document.querySelector("#username-page");
-  let chatPage = document.querySelector("#chat-page");
-  let usernameForm = document.querySelector("#usernameForm");
-  let messageForm = document.querySelector("#messageForm");
-  let messageInput = document.querySelector("#messageAlefa");
-  let connectedUsers = document.querySelector("#connectedUsers");
-  let connectingElement = document.querySelector(".connecting");
-  let chatArea = document.querySelector("#chat-messages");
-  let logout = document.querySelector("#logout");
-  let login = document.querySelector("#login");
+     usernamePage = document.querySelector("#username-page");
+   chatPage = document.querySelector("#chat-page");
+   usernameForm = document.querySelector("#usernameForm");
+   messageForm = document.querySelector("#messageForm");
+   messageInput = document.querySelector("#messageAlefa");
+   connectedUsers = document.querySelector("#connectedUsers");
+   connectingElement = document.querySelector(".connecting");
+   chatArea = document.querySelector("#chat-messages");
+   logout = document.querySelector("#logout");
+   login = document.querySelector("#login");
   }, []);
   
   const getMessage = async () => {
