@@ -33,7 +33,7 @@ const Detail = () => {
 
   const handleLoadDetail = async () => {
     try {
-      const url = ` http://localhost:8082/annonce/getByIdAnnonce/${idAnnonce}`;
+      const url = ` https://springboot-production-1101.up.railway.app/annonce/getByIdAnnonce/${idAnnonce}`;
 
       const response = await axios.get(url);
 
