@@ -151,7 +151,7 @@ const Home = () => {
 
   const handleLoadAnnonce = async () => {
     try {
-      const url = `http://localhost:8082/annonce/valide`;
+      const url = `https://springboot-production-1101.up.railway.app/annonce/valide`;
 
       const response = await axios.get(url);
 
