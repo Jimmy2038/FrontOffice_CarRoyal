@@ -27,7 +27,7 @@ const Announcements = () => {
         return;
       }
 
-      const url = `http://localhost:8082/annonce/valide/${idUser}`;
+      const url = `https://springboot-production-1101.up.railway.app/annonce/valide/${idUser}`;
 
       const response = await axios.get(url, {
         headers: {
