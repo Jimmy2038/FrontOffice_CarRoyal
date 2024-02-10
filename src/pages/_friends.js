@@ -27,16 +27,16 @@ const Friends = () => {
   let selectedUserId = null;
 
   useEffect(() => {
-    var usernamePage = document.querySelector("#username-page");
-  var chatPage = document.querySelector("#chat-page");
-  var usernameForm = document.querySelector("#usernameForm");
-  var messageForm = document.querySelector("#messageForm");
-  var messageInput = document.querySelector("#messageAlefa");
-  var connectedUsers = document.querySelector("#connectedUsers");
-  var connectingElement = document.querySelector(".connecting");
-  var chatArea = document.querySelector("#chat-messages");
-  var logout = document.querySelector("#logout");
-  var login = document.querySelector("#login");
+    let usernamePage = document.querySelector("#username-page");
+  let chatPage = document.querySelector("#chat-page");
+  let usernameForm = document.querySelector("#usernameForm");
+  let messageForm = document.querySelector("#messageForm");
+  let messageInput = document.querySelector("#messageAlefa");
+  let connectedUsers = document.querySelector("#connectedUsers");
+  let connectingElement = document.querySelector(".connecting");
+  let chatArea = document.querySelector("#chat-messages");
+  let logout = document.querySelector("#logout");
+  let login = document.querySelector("#login");
   }, []);
   
   const getMessage = async () => {
